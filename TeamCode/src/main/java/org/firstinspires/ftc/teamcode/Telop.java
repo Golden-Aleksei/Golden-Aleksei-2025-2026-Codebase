@@ -13,7 +13,7 @@ public class Telop extends Robot{
         * https://gm0.org/en/latest/docs/software/tutorials/gamepad.html
         */
         double y = -gamepad1.left_stick_y; // Forwards and backwards movement
-        double x = gamepad1.left_stick_x * 1.5; // For strafing, 1.1 is to counteract imperfect strafing
+        double x = gamepad1.left_stick_x * 1.1; // For strafing, 1.1 is to counteract imperfect strafing
         double rx = gamepad1.right_stick_x; // For turning(rx)
 
         // Changes speed when pressing button b

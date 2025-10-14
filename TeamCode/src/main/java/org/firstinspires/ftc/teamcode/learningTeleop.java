@@ -1,35 +1,21 @@
-// Robot.java
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-/*
- __  .___  ___. .______     ______   .______     .___________.    ___      .__   __. .___________. __
-|  | |   \/   | |   _  \   /  __  \  |   _  \    |           |   /   \     |  \ |  | |           ||  |
-|  | |  \  /  | |  |_)  | |  |  |  | |  |_)  |   `---|  |----`  /  ^  \    |   \|  | `---|  |----`|  |
-|  | |  |\/|  | |   ___/  |  |  |  | |      /        |  |      /  /_\  \   |  . `  |     |  |     |  |
-|  | |  |  |  | |  |      |  `--'  | |  |\  \----.   |  |     /  _____  \  |  |\   |     |  |     |__|
-|__| |__|  |__| | _|       \______/  | _| `._____|   |__|    /__/     \__\ |__| \__|     |__|     (__)
-* When modifying the robot significantly, please read and do all of the TODO items!
-*
- */
-
-public abstract class Robot extends OpMode {
-    // Define all Motors
+@TeleOp
+public class learningTeleop extends OpMode{
     DcMotor frontRight;
     DcMotor frontLeft;
     DcMotor backRight;
     DcMotor backLeft;
 
-    // TODO: Set speeds of the robot
-    public double currentSpeed = 1;
-    public double speedOne = 2;
-    public double speedTwo = 1;
 
-    // TODO: Check if encoders are needed
+    public double currentSpeed = 2; // 50% speed...
     public boolean encodersNeeded = true;
+
 
     @Override
     public void init(){
@@ -61,5 +47,18 @@ public abstract class Robot extends OpMode {
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         // Note: Comments are single line as each motor is different
 
+    }
+    @Override
+    public void loop() {
+        double y = -gamepad1.left_stick_y; // Forwards and backwards movement
+        double x = gamepad1.left_stick_x * 1.1; // For strafing, 1.1 is to counteract imperfect strafing
+        double rx = gamepad1.right_stick_x; // For turning(rx)
+
+
+        double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1);
+        double leftFrontPower = (y - x + rx) / denominator;
+        double leftBackPower = (y - x + rx) / denominator;
+        double rightFrontPower = (y + x - rx) / denominator;
+        double rightBackPower = (y + x - rx) / denominator;
     }
 }

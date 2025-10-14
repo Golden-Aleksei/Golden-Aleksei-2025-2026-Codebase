@@ -5,6 +5,16 @@ import com.acmerobotics.roadrunner.Pose2d;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
+/*
+* __    __   ___________    ____     _______   _  _     __      .___  ___.  __
+|  |  |  | |   ____\   \  /   /    |       \ | || |   |  |     |   \/   | |  |
+|  |__|  | |  |__   \   \/   /     |  .--.  || || |_  |  |     |  \  /  | |  |
+|   __   | |   __|   \_    _/      |  |  |  ||__   _| |  |     |  |\/|  | |  |
+|  |  |  | |  |____    |  |        |  '--'  |   | |   |  `----.|  |  |  | |__|
+|__|  |__| |_______|   |__|        |_______/    |_|   |_______||__|  |__| (__)
+This is roadrunner code!
+* */
+
 @Config
 @Autonomous(name = "RED_SIDE", group = "Autonomous",preselectTeleOp = "TeleOp")
 public class Auto extends LinearOpMode {
@@ -24,3 +34,4 @@ public class Auto extends LinearOpMode {
                 .build();
     }
 }
+
