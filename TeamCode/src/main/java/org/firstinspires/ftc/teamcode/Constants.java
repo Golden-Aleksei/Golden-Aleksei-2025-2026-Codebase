@@ -49,5 +49,6 @@ public class Constants {
 /* TODO Items:
 * Add encoder directions
 * Test localizer
-* Have not started with automatic tuners
+* Have not started with automatic tuners nor manual tuners
+*
  */
