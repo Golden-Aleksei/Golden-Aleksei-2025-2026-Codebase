@@ -1,6 +1,0 @@
-141 inches
-Tick traveled: 5137
-Lateral ticks: 4572.25
-kV: 0.004314244949712766
-kS: 0.9339627588547955
-track width: 1190.945159419526
