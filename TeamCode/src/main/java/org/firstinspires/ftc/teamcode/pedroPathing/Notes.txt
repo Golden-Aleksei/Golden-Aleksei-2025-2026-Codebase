@@ -1,0 +1,48 @@
+Gampead 2 RT = Servos spin up
+Gamepad 2 LT = Servos spin up, top motors reverse slowly
+Gamepad 2 Y = Spinniing fast
+Gamepad 2 LB = Servos spin reverse
+Gamepad 2 RB = Servos  & outtake stop
+Gamepad 2 Y = outtake runs
+
+
+Max velocity Left: 222
+Max Velocity Right: 276
+
+Original PIDF: PIDFCoefficients(10,3,0,0)
+New one what
+
+RT = Servo goes up
+LT = Servo goes down
+
+Motor ports numbers
+0.Front Left
+1.Front Right
+2.Rear Left
+3.Rear Right
+
+0.Top Right
+1.Top Left
+
+Left max velocity = 2600
+P = 1.2603
+I = 0.12603
+D = 0
+F = 12.603
+
+Right max velocity = 2640
+P = 1.2412
+I = 0.12412
+D = 0
+F = 12.412
+
+PIDF Pedropathing:
+            .translationalPIDFCoefficients(new PIDFCoefficients(0.1, 0, 0.01, 0.03))
+            .headingPIDFCoefficients(new PIDFCoefficients(0.8,0,0.02,0.03))
+            .drivePIDFCoefficients(new FilteredPIDFCoefficients(0.025,0,0.00001,0.6,0.01))
+
+Outtake motors default PIDF:
+    public static double p = 125;
+    public static double i = 0; // Always 0
+    public static double d = 0.01;
+    public static double f = 12.9;
